@@ -10,7 +10,8 @@
     "paper-icon-button": "Polymer/paper-icon-button#0.8-preview",
     "iron-elements": "PolymerElements/iron-elements",
     "iron-test-helpers": "PolymerElements/iron-test-helpers#~0.8.3",
-    "iron-icons": "PolymerElements/iron-icons#~0.8.3"
+    "iron-icons": "PolymerElements/iron-icons#~0.8.3",
+    "service-worker": "PolymerElements/service-worker#0.8-preview"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#master",
