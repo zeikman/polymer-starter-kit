@@ -75,6 +75,13 @@
       </div>
     </paper-drawer-panel>
 
+
+      <service-worker skip-waiting
+                      clients-claim
+                      reload-on-install>
+        <service-worker-cache default-cache-strategy="networkFirst" precache="['index.html', 'styles/main.css','scripts/app.js','elements/elements.html']"></service-worker-cache>
+      </service-worker>
+
   </template>
 
   <!-- build:js scripts/app.js -->
