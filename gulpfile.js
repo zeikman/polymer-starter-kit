@@ -150,11 +150,14 @@ gulp.task('vulcanize', function () {
     .pipe($.vulcanize({
       dest: DEST_DIR,
       strip: true,
-      inline: true
+      inlineCss: true,
+      inlineScripts: true
     }))
     .pipe(gulp.dest(DEST_DIR))
     .pipe($.size({title: 'vulcanize'}));
 });
+
+
 
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));

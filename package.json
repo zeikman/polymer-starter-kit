@@ -2,6 +2,14 @@
   "name": "polymer-starter-kit",
   "version": "0.0.0",
   "dependencies": {},
+  "scripts": {
+    "serve": "./node_modules/.bin/gulp serve",
+    "serve:dist": "./node_modules/.bin/gulp serve:dist",
+    "build:unvulcanized": "./node_modules/.bin/gulp",
+    "build": "npm run build:unvulcanized && ./node_modules/.bin/vulcanize -s --inline-scripts --inline-css ./dist/elements/elements.html > ./dist/elements/elements.vulcanized.html",
+    "clean": "./node_modules/.bin/gulp clean",
+    "deps": "npm install && ./node_modules/.bin/bower install"
+  },
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "browser-sync": "^2.6.4",
@@ -26,6 +34,7 @@
     "gulp-vulcanize": "^6.0.0",
     "jshint-stylish": "^1.0.1",
     "merge-stream": "^0.1.7",
+    "vulcanize": "^1.4.2",
     "opn": "^1.0.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.0.2",
