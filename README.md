@@ -13,4 +13,4 @@
 
 1. Open up your terminal 
 2. Run `cd polymer-starter-kit/app`
-3. Run `python –m SimpleHTTPServer 8080` to fire up a server inside the `app` directory. That's it!
+3. Run `python -m SimpleHTTPServer 8080` to fire up a server inside the `app` directory. That's it!
