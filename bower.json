@@ -5,7 +5,6 @@
   "dependencies": {
     "iron-elements": "PolymerElements/iron-elements#1.0.0",
     "paper-elements": "PolymerElements/paper-elements#1.0.1",
-    "platinum-elements": "PolymerElements/platinum-elements#1.0.0",
     "page": "visionmedia/page.js#~1.6.3"
   },
   "devDependencies": {
@@ -67,7 +66,6 @@
     "paper-tabs": "^1.0.0",
     "paper-toast": "^1.0.0",
     "iron-a11y-announcer": "^1.0.0",
-    "paper-toggle-button": "^1.0.0",
-    "platinum-sw": "~1.0.0"
+    "paper-toggle-button": "^1.0.0"
   }
 }
