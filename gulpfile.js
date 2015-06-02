@@ -68,6 +68,19 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
+
+// Concatenate and minify JavaScript
+gulp.task('scripts', function () {
+  // Add any additional JS sources to this array
+  var sources = ['./app/scripts/app.js'];
+  return gulp.src(sources)
+    .pipe($.concat('app.min.js'))
+    .pipe($.uglify({preserveComments: 'some'}))
+    // Output files
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe($.size({title: 'scripts'}));
+});
+
 // Optimize Images
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
@@ -125,8 +138,6 @@ gulp.task('html', function () {
     // Replace path for vulcanized assets
     .pipe($.if('*.html', $.replace('elements/elements.html', 'elements/elements.vulcanized.html')))
     .pipe(assets)
-    // Concatenate And Minify JavaScript
-    .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
     // Concatenate And Minify Styles
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.cssmin()))
@@ -217,7 +228,7 @@ gulp.task('default', ['clean'], function (cb) {
   runSequence(
     ['copy', 'styles'],
     'elements',
-    ['jshint', 'images', 'fonts', 'html'],
+    ['jshint', 'images', 'fonts', 'scripts', 'html'],
     'vulcanize', 'precache',
     cb);
 });
